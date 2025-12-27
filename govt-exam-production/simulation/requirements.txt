@@ -1,0 +1,5 @@
+streamlit
+pandas
+plotly
+mesa==3.3.1
+numpy
