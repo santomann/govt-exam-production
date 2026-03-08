@@ -270,9 +270,8 @@ def create_premium_map(zone_locs):
     
     # Add premium tile layer
     folium.TileLayer(
-        tiles='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
-        attr='Stadia Maps',
-        name='Premium Base',
+        tiles='OpenStreetMap',
+        name='Base',
         overlay=False,
         control=False
     ).add_to(m)
@@ -620,6 +619,14 @@ def run_simulation(month, days, custom_params=None):
     progress_bar.empty()
     status_text.empty()
     return pd.DataFrame(global_stats), pd.DataFrame(zone_stats), zone_locations
+
+# --- BACK BUTTON ---
+st.markdown("""
+<a href="https://complexsystemmodelling.in/delhi-airshed-methodology.html" 
+   style="text-decoration:none; color:#4299e1; font-size:1rem;">
+   ← Back to Methodology
+</a>
+""", unsafe_allow_html=True)
 
 # --- HEADER ---
 st.markdown("""
@@ -1313,4 +1320,5 @@ st.markdown("""
     <p style='margin: 0;'>🌫️ <b>Delhi Airshed Simulator v3.0</b> | Physics-Based Air Quality Modeling</p>
     <p style='margin: 0.5rem 0 0 0; font-size: 0.9rem;'>Educational tool for research and policy exploration</p>
 </div>
+
 """, unsafe_allow_html=True)
